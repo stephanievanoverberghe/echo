@@ -1,4 +1,4 @@
-# 📁 Étape intermédiaire — Définir l’arborescence des dossiers et fichiers
+# 📁 Étape 08 — Définir l’arborescence des dossiers et fichiers
 
 ---
 

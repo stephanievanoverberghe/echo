@@ -1,4 +1,4 @@
-# 🧭 Étape 8 — Zoning de la page d’accueil
+# 🧭 Étape 7 — Zoning de la page d’accueil
 
 ---
 
