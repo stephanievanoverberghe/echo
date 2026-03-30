@@ -13,6 +13,14 @@
 <body class="page page-artefacts">
     <a class="skip-link" href="#contenu-principal">Aller au contenu principal</a>
 
+    <div class="atmosphere" aria-hidden="true">
+        <div class="atmosphere__layer atmosphere__layer--ambiance"></div>
+        <div class="atmosphere__layer atmosphere__layer--halo"></div>
+        <div class="atmosphere__layer atmosphere__layer--dust"></div>
+        <div class="atmosphere__layer atmosphere__layer--texture"></div>
+        <canvas class="atmosphere__light-leaks" data-light-leaks></canvas>
+    </div>
+
     <header class="site-header" aria-label="En-tête principal">
         <div class="site-header__inner layout-inner">
             <p class="site-branding">
@@ -57,8 +65,11 @@
 
                 <article class="artefact-card" aria-labelledby="artefact-01-title">
                     <figure class="artefact-card__figure">
-                        <div class="artefact-card__visual" role="img"
-                            aria-label="Surface minérale sombre marquée d'une fissure lumineuse"></div>
+                        <div class="artefact-card__visual">
+                            <img class="artefact-card__image" src="assets/images/artefacts/basalte-froid.png"
+                                alt="Éclat de basalte froid marqué d'une fissure lumineuse" loading="lazy"
+                                decoding="async" />
+                        </div>
                         <figcaption class="artefact-card__caption">Dépôt retrouvé près du seuil flottant.</figcaption>
                     </figure>
                     <div class="artefact-card__content">
@@ -74,8 +85,11 @@
 
                 <article class="artefact-card" aria-labelledby="artefact-02-title">
                     <figure class="artefact-card__figure">
-                        <div class="artefact-card__visual" role="img"
-                            aria-label="Membrane translucide suspendue dans une pénombre bleutée"></div>
+                        <div class="artefact-card__visual">
+                            <img class="artefact-card__image" src="assets/images/artefacts/voile-isochrone.png"
+                                alt="Voile isochrone translucide dans une pénombre bleutée" loading="lazy"
+                                decoding="async" />
+                        </div>
                         <figcaption class="artefact-card__caption">Section prélevée dans une zone sans horizon.
                         </figcaption>
                     </figure>
@@ -91,8 +105,11 @@
 
                 <article class="artefact-card" aria-labelledby="artefact-03-title">
                     <figure class="artefact-card__figure">
-                        <div class="artefact-card__visual" role="img"
-                            aria-label="Anneau métallique noirci entouré d'une brume diffuse"></div>
+                        <div class="artefact-card__visual">
+                            <img class="artefact-card__image" src="assets/images/artefacts/anneau-des-retours.png"
+                                alt="Anneau des retours métallique noirci dans la brume" loading="lazy"
+                                decoding="async" />
+                        </div>
                         <figcaption class="artefact-card__caption">Objet circulaire retrouvé au bord d'un vide actif.
                         </figcaption>
                     </figure>
@@ -109,8 +126,11 @@
 
                 <article class="artefact-card" aria-labelledby="artefact-04-title">
                     <figure class="artefact-card__figure">
-                        <div class="artefact-card__visual" role="img"
-                            aria-label="Plaque sombre gravée de symboles partiellement effacés"></div>
+                        <div class="artefact-card__visual">
+                            <img class="artefact-card__image" src="assets/images/artefacts/tablette-des-voix-basses.png"
+                                alt="Tablette des voix basses gravée de symboles partiellement effacés" loading="lazy"
+                                decoding="async" />
+                        </div>
                         <figcaption class="artefact-card__caption">Inscription fragmentaire retrouvée sous une couche de
                             cendre.</figcaption>
                     </figure>
@@ -127,8 +147,12 @@
 
                 <article class="artefact-card" aria-labelledby="artefact-05-title">
                     <figure class="artefact-card__figure">
-                        <div class="artefact-card__visual" role="img"
-                            aria-label="Filament lumineux replié sur lui-même dans une chambre obscure"></div>
+                        <div class="artefact-card__visual">
+                            <img class="artefact-card__image"
+                                src="assets/images/artefacts/nerfs-de-lumiere-residuelle.png"
+                                alt="Nerf de lumière résiduelle, filament lumineux enroulé" loading="lazy"
+                                decoding="async" />
+                        </div>
                         <figcaption class="artefact-card__caption">Fil trouvé après une interruption totale des repères.
                         </figcaption>
                     </figure>
