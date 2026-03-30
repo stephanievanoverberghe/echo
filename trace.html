@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Echo — Trace, un espace pour déposer un fragment et laisser une empreinte dans le silence." />
+    <title>Echo — Trace</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="page page-trace">
+    <header class="site-header" aria-label="En-tête principal">
+        <div class="site-header__inner">
+            <p class="site-branding">
+                <a href="index.html" class="site-branding__link">Echo</a>
+            </p>
+            <nav class="site-nav" aria-label="Navigation principale">
+                <ul class="site-nav__list">
+                    <li class="site-nav__item">
+                        <a class="site-nav__link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a class="site-nav__link" href="journal.html">Journal</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a class="site-nav__link" href="artefacts.html">Artefacts</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a class="site-nav__link" href="carte.html">Carte</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a class="site-nav__link" href="trace.html" aria-current="page">Trace</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main" id="contenu-principal">
+        <section class="trace-introduction" aria-labelledby="trace-title">
+            <div class="trace-introduction__inner">
+                <h1 class="trace-introduction__title" id="trace-title">Laisse une trace avant que le noir ne la boive.
+                </h1>
+                <p class="trace-introduction__text">
+                    Si une présence t'a traversé ici, écris-la. Un nom peut rester flou, un message peut rester bref,
+                    mais chaque fragment déposé déplace légèrement le silence.
+                </p>
+            </div>
+        </section>
+
+        <section class="trace-form-section" aria-labelledby="trace-form-title">
+            <div class="trace-form-section__inner">
+                <h2 class="trace-form-section__title" id="trace-form-title">Déposer un fragment</h2>
+                <p class="trace-form-section__lead">
+                    Écris comme on parle à voix basse dans une pièce vide.
+                </p>
+
+                <form class="trace-form" action="#" method="post" aria-describedby="trace-form-note">
+                    <div class="trace-form__field">
+                        <label class="trace-form__label" for="trace-name">Nom (optionnel)</label>
+                        <input class="trace-form__input" type="text" id="trace-name" name="nom" autocomplete="name"
+                            placeholder="Une présence, un signe, un prénom..." />
+                    </div>
+
+                    <div class="trace-form__field">
+                        <label class="trace-form__label" for="trace-message">Message</label>
+                        <textarea class="trace-form__textarea" id="trace-message" name="message" rows="6"
+                            placeholder="Ce qui persiste, ce qui tremble, ce que tu n'as pas dit ailleurs..."
+                            required></textarea>
+                    </div>
+
+                    <button class="trace-form__submit" type="submit">Laisser cette trace</button>
+                    <p class="trace-form__note" id="trace-form-note">
+                        Ici, rien n'est envoyé au monde entier : seulement confié à l'obscurité.
+                    </p>
+                </form>
+            </div>
+        </section>
+
+        <section class="trace-closure" aria-labelledby="trace-closure-title">
+            <div class="trace-closure__inner">
+                <h2 class="trace-closure__title" id="trace-closure-title">Le silence répond parfois plus tard.</h2>
+                <p class="trace-closure__text">
+                    Reviens quand tu voudras. Les fragments ne disparaissent pas tout à fait,
+                    ils changent seulement de forme dans l'ombre.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Pied de page">
+        <div class="site-footer__inner">
+            <p class="site-footer__text">Echo — Journal d'une conscience dans le noir</p>
+        </div>
+    </footer>
+</body>
+
+</html>
