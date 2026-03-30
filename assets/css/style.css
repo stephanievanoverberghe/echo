@@ -631,6 +631,31 @@ button:focus-visible,
     margin-top: var(--space-1);
 }
 
+.trace-form__textarea[aria-invalid="true"] {
+    border-color: #ff9aa6;
+    box-shadow: 0 0 0 3px rgba(255, 118, 134, 0.22);
+}
+
+.trace-form__error,
+.trace-form__status {
+    font-size: var(--fs-300);
+    margin-top: 0.2rem;
+}
+
+.trace-form__error {
+    color: #ffd7dd;
+}
+
+.trace-form__status {
+    color: #d3dbff;
+}
+
+.trace-form__submit[disabled] {
+    opacity: 0.72;
+    cursor: not-allowed;
+    transform: none;
+}
+
 /* =========================
    9) Footer
    ========================= */
