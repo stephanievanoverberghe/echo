@@ -164,6 +164,13 @@
         const canvas = document.querySelector('[data-light-leaks]');
         if (!canvas || !canvas.getContext) return;
 
+        const leaksOpacityValue = getComputedStyle(document.body).getPropertyValue('--light-leaks-opacity').trim();
+        const leaksOpacity = Number.parseFloat(leaksOpacityValue);
+        if (!Number.isFinite(leaksOpacity) || leaksOpacity <= 0.04) {
+            canvas.style.display = 'none';
+            return;
+        }
+
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
 
