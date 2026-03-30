@@ -11,8 +11,10 @@
 </head>
 
 <body class="page page-trace">
+    <a class="skip-link" href="#contenu-principal">Aller au contenu principal</a>
+
     <header class="site-header" aria-label="En-tête principal">
-        <div class="site-header__inner">
+        <div class="site-header__inner layout-inner">
             <p class="site-branding">
                 <a href="index.html" class="site-branding__link">Echo</a>
             </p>
@@ -38,9 +40,9 @@
         </div>
     </header>
 
-    <main class="site-main" id="contenu-principal">
+    <main class="site-main" id="contenu-principal" tabindex="-1">
         <section class="trace-introduction" aria-labelledby="trace-title">
-            <div class="trace-introduction__inner">
+            <div class="trace-introduction__inner layout-inner">
                 <h1 class="trace-introduction__title" id="trace-title">Laisse une trace avant que le noir ne la boive.
                 </h1>
                 <p class="trace-introduction__text">
@@ -51,7 +53,7 @@
         </section>
 
         <section class="trace-form-section" aria-labelledby="trace-form-title">
-            <div class="trace-form-section__inner">
+            <div class="trace-form-section__inner layout-inner">
                 <h2 class="trace-form-section__title" id="trace-form-title">Déposer un fragment</h2>
                 <p class="trace-form-section__lead">
                     Écris comme on parle à voix basse dans une pièce vide.
@@ -68,7 +70,7 @@
                         <label class="trace-form__label" for="trace-message">Message</label>
                         <textarea class="trace-form__textarea" id="trace-message" name="message" rows="6"
                             placeholder="Ce qui persiste, ce qui tremble, ce que tu n'as pas dit ailleurs..."
-                            required></textarea>
+                            aria-required="true" required></textarea>
                     </div>
 
                     <button class="trace-form__submit" type="submit">Laisser cette trace</button>
@@ -80,7 +82,7 @@
         </section>
 
         <section class="trace-closure" aria-labelledby="trace-closure-title">
-            <div class="trace-closure__inner">
+            <div class="trace-closure__inner layout-inner">
                 <h2 class="trace-closure__title" id="trace-closure-title">Le silence répond parfois plus tard.</h2>
                 <p class="trace-closure__text">
                     Reviens quand tu voudras. Les fragments ne disparaissent pas tout à fait,
@@ -91,7 +93,7 @@
     </main>
 
     <footer class="site-footer" aria-label="Pied de page">
-        <div class="site-footer__inner">
+        <div class="site-footer__inner layout-inner">
             <p class="site-footer__text">Echo — Journal d'une conscience dans le noir</p>
         </div>
     </footer>

@@ -11,8 +11,10 @@
 </head>
 
 <body class="page page-carte">
+    <a class="skip-link" href="#contenu-principal">Aller au contenu principal</a>
+
     <header class="site-header" aria-label="En-tête principal">
-        <div class="site-header__inner">
+        <div class="site-header__inner layout-inner">
             <p class="site-branding">
                 <a href="index.html" class="site-branding__link">Echo</a>
             </p>
@@ -38,9 +40,9 @@
         </div>
     </header>
 
-    <main class="site-main" id="contenu-principal">
+    <main class="site-main" id="contenu-principal" tabindex="-1">
         <section class="carte-introduction" aria-labelledby="carte-title">
-            <div class="carte-introduction__inner">
+            <div class="carte-introduction__inner layout-inner">
                 <h1 class="carte-introduction__title" id="carte-title">Cartographie des zones sans contour</h1>
                 <p class="carte-introduction__text">
                     Ici, rien ne s'aligne comme un territoire stable. Les repères dérivent, les distances respirent,
@@ -50,7 +52,7 @@
         </section>
 
         <section class="carte-zones" aria-labelledby="carte-zones-title">
-            <div class="carte-zones__inner">
+            <div class="carte-zones__inner layout-inner">
                 <h2 class="carte-zones__title" id="carte-zones-title">Fragments d'espace</h2>
 
                 <article class="zone-fragment" aria-labelledby="zone-01-title">
@@ -142,7 +144,7 @@
     </main>
 
     <footer class="site-footer" aria-label="Pied de page">
-        <div class="site-footer__inner">
+        <div class="site-footer__inner layout-inner">
             <p class="site-footer__text">Echo — Journal d'une conscience dans le noir</p>
         </div>
     </footer>
