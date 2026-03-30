@@ -16,7 +16,7 @@
     --color-surface-strong: rgba(24, 32, 56, 0.84);
     --color-border: rgba(170, 188, 255, 0.16);
     --color-text: #e7eaf5;
-    --color-text-muted: #b6bdd4;
+    --color-text-muted: #c0c7dc;
     --color-accent: #9aa9ff;
     --color-accent-soft: #7786ca;
 
@@ -37,7 +37,7 @@
     --space-1: 0.4rem;
     --space-2: 0.7rem;
     --space-3: 1rem;
-    --space-4: 1.4rem;
+    --space-4: 1.5rem;
     --space-5: 2rem;
     --space-6: 3rem;
     --space-7: 4.4rem;
@@ -200,6 +200,16 @@ p {
     text-wrap: pretty;
 }
 
+.hero__subtitle,
+.exploration__lead,
+.journal-introduction__text,
+.artefacts-introduction__text,
+.carte-introduction__text,
+.trace-introduction__text,
+.trace-closure__text {
+    max-width: 66ch;
+}
+
 a {
     color: var(--color-text);
     text-decoration-thickness: 0.06em;
@@ -316,7 +326,7 @@ button:focus-visible,
 }
 
 .site-main>section+section {
-    margin-top: var(--space-4);
+    margin-top: var(--space-3);
 }
 
 .journal-fragments__inner,
@@ -445,6 +455,17 @@ button:focus-visible,
     margin-bottom: var(--space-3);
 }
 
+.introduction__title,
+.exploration__title,
+.immersion__title,
+.trace-form-section__title,
+.trace-closure__title,
+.journal-fragments__title,
+.artefacts-gallery__title,
+.carte-zones__title {
+    margin-bottom: var(--space-3);
+}
+
 .hero__subtitle,
 .introduction__text+.introduction__text,
 .trace-form-section__lead {
@@ -531,6 +552,7 @@ button:focus-visible,
 .zone-fragment {
     display: grid;
     gap: var(--space-2);
+    align-content: start;
 }
 
 .journal-fragment__marker,
@@ -605,6 +627,10 @@ button:focus-visible,
     margin-top: var(--space-1);
 }
 
+.trace-form__note {
+    margin-top: var(--space-1);
+}
+
 /* =========================
    9) Footer
    ========================= */
@@ -652,10 +678,28 @@ button:focus-visible,
     .site-header__inner {
         flex-direction: column;
         align-items: flex-start;
+        gap: var(--space-2);
+    }
+
+    .site-nav {
+        width: 100%;
     }
 
     .site-nav__list {
         justify-content: flex-start;
+        gap: 0.45rem;
+    }
+
+    .site-nav__link {
+        padding: 0.42rem 0.72rem;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .site-main {
+        padding-block: var(--space-3) var(--space-6);
     }
 }
 
@@ -679,6 +723,7 @@ button:focus-visible,
 
     .artefacts-gallery__inner {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
     }
 
     .artefacts-gallery__title {
