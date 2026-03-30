@@ -676,27 +676,26 @@ button:focus-visible,
 /* =========================
    10) Révélations progressives
    ========================= */
-.js-enhanced main section,
-.js-enhanced .journal-fragment,
-.js-enhanced .artefact-card,
-.js-enhanced .zone-fragment,
-.js-enhanced .exploration-links__item {
+.js-enhanced .reveal-on-scroll {
     opacity: 0;
-    transform: translateY(0.65rem);
+    transform: translateY(0.5rem);
     transition:
-        opacity 560ms ease,
-        transform 620ms cubic-bezier(0.2, 0.72, 0.2, 1);
+        opacity 420ms ease,
+        transform 520ms cubic-bezier(0.2, 0.72, 0.2, 1);
     transition-delay: var(--reveal-delay, 0ms);
-    will-change: opacity, transform;
 }
 
-.js-enhanced main section.is-visible,
-.js-enhanced .journal-fragment.is-visible,
-.js-enhanced .artefact-card.is-visible,
-.js-enhanced .zone-fragment.is-visible,
-.js-enhanced .exploration-links__item.is-visible {
+.js-enhanced .reveal-on-scroll.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .js-enhanced .reveal-on-scroll {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
 
 /* =========================

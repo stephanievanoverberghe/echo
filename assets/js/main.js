@@ -1,15 +1,7 @@
 (function () {
     'use strict';
 
-    const revealSelectors = [
-        'main section',
-        '.journal-fragment',
-        '.artefact-card',
-        '.zone-fragment',
-        '.exploration-links__item'
-    ];
-
-    const elements = document.querySelectorAll(revealSelectors.join(','));
+    const elements = Array.from(document.querySelectorAll('main > section'));
     if (!elements.length) return;
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -19,13 +11,17 @@
         element.classList.add('is-visible');
     };
 
+    elements.forEach(function (element) {
+        element.classList.add('reveal-on-scroll');
+    });
+
     if (prefersReducedMotion || !('IntersectionObserver' in window)) {
         elements.forEach(revealElement);
         return;
     }
 
     elements.forEach(function (element, index) {
-        element.style.setProperty('--reveal-delay', (index % 4) * 50 + 'ms');
+        element.style.setProperty('--reveal-delay', (index % 3) * 40 + 'ms');
     });
 
     const observer = new IntersectionObserver(
@@ -39,8 +35,8 @@
         },
         {
             root: null,
-            rootMargin: '0px 0px -10% 0px',
-            threshold: 0.12
+            rootMargin: '0px 0px -8% 0px',
+            threshold: 0.16
         }
     );
 
