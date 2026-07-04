@@ -173,3 +173,17 @@ h4 {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Carte avec tilt 3D au pointeur (portée de style.css .artefact-card) */
+.echo-card {
+  --rotate-x: 0deg;
+  --rotate-y: 0deg;
+  --pointer-lift: 0px;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 320ms cubic-bezier(0.2, 0.75, 0.25, 1), box-shadow 280ms ease;
+}
+
+.echo-card.is-depth-active {
+  transform: perspective(850px) rotateX(var(--rotate-x)) rotateY(var(--rotate-y)) translateY(calc(var(--pointer-lift) * -1));
+}
