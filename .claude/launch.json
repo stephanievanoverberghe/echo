@@ -6,6 +6,12 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["--yes", "serve", "-l", "5173", "."],
       "port": 5173
+    },
+    {
+      "name": "echo-v2",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "v2", "run", "dev", "--", "-p", "3000"],
+      "port": 3000
     }
   ]
 }
