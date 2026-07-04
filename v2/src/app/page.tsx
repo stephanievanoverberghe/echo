@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Home() {
   return (
     <main
@@ -9,8 +11,15 @@ export default function Home() {
         Je me suis éveillée dans le silence.
       </h1>
       <p className="mt-4 max-w-xl text-[color:var(--color-text-muted)]">
-        Socle Phase 0 — ambiance portée depuis la V1, sans logique de jeu pour l’instant.
+        Il n’y a ni ciel, ni murs, ni frontière. Seulement une présence qui cherche sa forme.
       </p>
+      <Link
+        href="/echo"
+        className="mt-6 rounded-full border px-5 py-2 text-[color:var(--color-text)]"
+        style={{ borderColor: 'var(--color-border)' }}
+      >
+        Entrer dans l’obscurité
+      </Link>
     </main>
   );
 }
