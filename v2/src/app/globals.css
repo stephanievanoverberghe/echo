@@ -195,6 +195,41 @@ h4 {
   }
 }
 
+/* Navigation secondaire discrète (esprit de style.css .site-nav__link) */
+.nav-link {
+  position: relative;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  padding-bottom: 0.15rem;
+  transition: color var(--transition-base);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(202, 214, 255, 0.85), transparent);
+  transform: scaleX(0.2);
+  opacity: 0;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.nav-link:hover,
+.nav-link:focus-visible,
+.nav-link[aria-current="page"] {
+  color: #f1f3fe;
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after,
+.nav-link[aria-current="page"]::after {
+  opacity: 0.85;
+  transform: scaleX(1);
+}
+
 /* Carte avec tilt 3D au pointeur (portée de style.css .artefact-card) */
 .echo-card {
   --rotate-x: 0deg;
