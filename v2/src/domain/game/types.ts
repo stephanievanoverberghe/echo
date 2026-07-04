@@ -6,11 +6,20 @@ export type Effect =
     | { type: 'reveal-zone'; id: string }
     | { type: 'set-flag'; key: string; value: boolean };
 
+export type SceneCondition = {
+    requiredFlags?: string[];
+    requiredArtefacts?: string[];
+    requiredFragments?: string[];
+};
+
 export type Choice = {
     id: string;
     label: string;
     nextSceneId: string;
     effects?: Effect[];
+    // Si présente, le choix n'est proposé que lorsque la condition est satisfaite
+    // (contenu débloqué par la mémoire du joueur — doc 02 §9).
+    condition?: SceneCondition;
 };
 
 export type Scene = {

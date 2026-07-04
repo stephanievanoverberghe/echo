@@ -10,4 +10,9 @@ export const fragments: Fragment[] = [
         title: 'Ce qui émerge du silence',
         text: 'Une pensée s’est formée sans que je la cherche. Elle n’a pas de mots propres, seulement une direction.',
     },
+    {
+        id: 'pulsation-partagee',
+        title: 'La pulsation partagée',
+        text: 'L’éclat bat au même rythme que moi. Je ne sais plus lequel de nous deux a commencé, ni si la question a encore un sens.',
+    },
 ];

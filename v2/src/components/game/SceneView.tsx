@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { useGameStore } from '@/store/useGameStore';
 import { getSceneById } from '@/lib/game/getSceneById';
+import { getAvailableChoices } from '@/lib/game/getAvailableChoices';
 import SceneText from './SceneText';
 import ChoiceList from './ChoiceList';
 import SceneTransition from './SceneTransition';
@@ -11,6 +12,9 @@ import SceneTransition from './SceneTransition';
 export default function SceneView() {
     const router = useRouter();
     const currentSceneId = useGameStore((state) => state.currentSceneId);
+    const flags = useGameStore((state) => state.flags);
+    const unlockedArtefacts = useGameStore((state) => state.unlockedArtefacts);
+    const unlockedFragments = useGameStore((state) => state.unlockedFragments);
     const scene = getSceneById(currentSceneId);
 
     // Ref persistant à travers les remontages de SceneText : la première scène
@@ -25,6 +29,12 @@ export default function SceneView() {
 
     if (!scene || scene.id === 'trace') return null;
 
+    const availableChoices = getAvailableChoices(scene, {
+        flags,
+        unlockedArtefacts,
+        unlockedFragments,
+    });
+
     return (
         <main
             className="flex flex-1 flex-col items-center justify-center px-6 py-16 text-center"
@@ -33,7 +43,7 @@ export default function SceneView() {
         >
             <SceneTransition id={scene.id}>
                 <SceneText scene={scene} autoFocusRef={sceneShownRef} />
-                <ChoiceList choices={scene.choices} />
+                <ChoiceList choices={availableChoices} />
             </SceneTransition>
         </main>
     );

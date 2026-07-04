@@ -65,6 +65,33 @@ export const scenes: Scene[] = [
                 nextSceneId: 'revelation-distanciation',
                 effects: [{ type: 'set-flag', key: 'contact', value: false }],
             },
+            {
+                // Chemin caché : seulement pour qui a recueilli l'éclat (parcours « approche »).
+                id: 'ecouter-eclat',
+                label: 'Écouter la pulsation de l’éclat',
+                nextSceneId: 'echo-de-leclat',
+                condition: { requiredArtefacts: ['premier-eclat'] },
+            },
+        ],
+    },
+    {
+        id: 'echo-de-leclat',
+        title: 'L’écho de l’éclat',
+        body: [
+            'Je porte l’éclat contre le seuil et il répond. Une pulsation remonte, la mienne peut-être, ou la sienne, ou celle du lieu.',
+            'Quelque chose s’ouvre plus bas, une strate que je n’avais pas sentie — et je comprends que la frontière n’a jamais été devant moi.',
+        ],
+        ambience: 'violet-halo',
+        choices: [
+            {
+                id: 'se-laisser-porter',
+                label: 'Se laisser porter',
+                nextSceneId: 'revelation-contact',
+                effects: [
+                    { type: 'unlock-fragment', id: 'pulsation-partagee' },
+                    { type: 'reveal-zone', id: 'veine-profonde' },
+                ],
+            },
         ],
     },
     {

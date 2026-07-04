@@ -3,6 +3,7 @@ import { persist } from 'zustand/middleware';
 import type { GameState } from '@/domain/game/types';
 import { getSceneById } from '@/lib/game/getSceneById';
 import { applyEffects } from '@/lib/game/applyEffects';
+import { checkCondition } from '@/lib/game/checkCondition';
 
 const INITIAL_SCENE_ID = 'eveil';
 
@@ -31,6 +32,9 @@ export const useGameStore = create<GameStore>()(
                 const currentScene = getSceneById(state.currentSceneId);
                 const choice = currentScene?.choices.find((c) => c.id === choiceId);
                 if (!choice) return;
+                // La condition est déjà filtrée à l'affichage ; on la revérifie ici
+                // pour que le déblocage reste autoritatif et pas seulement cosmétique.
+                if (!checkCondition(choice.condition, state)) return;
 
                 const effectsPatch = applyEffects(state, choice.effects);
 
