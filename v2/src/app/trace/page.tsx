@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useGameStore } from '@/store/useGameStore';
 import { getSceneById } from '@/lib/game/getSceneById';
 import SceneText from '@/components/game/SceneText';
+import SceneTransition from '@/components/game/SceneTransition';
 
 export default function TracePage() {
     const router = useRouter();
@@ -27,23 +28,25 @@ export default function TracePage() {
             id="contenu-principal"
             tabIndex={-1}
         >
-            <SceneText scene={scene} />
+            <SceneTransition id="trace">
+                <SceneText scene={scene} />
 
-            <div className="mt-8 max-w-xl text-[length:var(--fs-300)] text-[color:var(--color-text-muted)]">
-                <p>
-                    Parcours : {unlockedFragments.length} fragment(s), {unlockedArtefacts.length} artefact(s),{' '}
-                    {revealedZones.length} zone(s) révélée(s)
-                    {flags.contact !== undefined && (flags.contact ? ' — tu as touché la surface.' : ' — tu as reculé.')}
-                </p>
-                <button
-                    type="button"
-                    onClick={handleReset}
-                    className="mt-4 rounded-full border px-4 py-2 text-[color:var(--color-text)]"
-                    style={{ borderColor: 'var(--color-border)' }}
-                >
-                    Recommencer
-                </button>
-            </div>
+                <div className="mt-8 max-w-xl text-[length:var(--fs-300)] text-[color:var(--color-text-muted)]">
+                    <p>
+                        Parcours : {unlockedFragments.length} fragment(s), {unlockedArtefacts.length} artefact(s),{' '}
+                        {revealedZones.length} zone(s) révélée(s)
+                        {flags.contact !== undefined && (flags.contact ? ' — tu as touché la surface.' : ' — tu as reculé.')}
+                    </p>
+                    <button
+                        type="button"
+                        onClick={handleReset}
+                        className="mt-4 rounded-full border px-4 py-2 text-[color:var(--color-text)]"
+                        style={{ borderColor: 'var(--color-border)' }}
+                    >
+                        Recommencer
+                    </button>
+                </div>
+            </SceneTransition>
         </main>
     );
 }

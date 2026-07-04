@@ -124,6 +124,7 @@ h4 {
 .atmosphere__light-leaks {
   position: absolute;
   inset: 0;
+  transition: opacity 600ms ease;
 }
 
 .atmosphere__layer--ambiance {
@@ -148,6 +149,26 @@ h4 {
   background: url("/images/textures/texture-overlay.png") center/760px repeat;
   opacity: var(--texture-opacity);
   mix-blend-mode: soft-light;
+}
+
+/* Presets d'ambiance par scène (doc 03 §13) : chaque valeur de Scene.ambience
+   met l'accent sur l'un des trois calques existants. */
+[data-ambience="dust"] {
+  --ambiance-opacity: 0.18;
+  --halo-opacity: 0.12;
+  --dust-opacity: 0.24;
+}
+
+[data-ambience="blue-fog"] {
+  --ambiance-opacity: 0.3;
+  --halo-opacity: 0.12;
+  --dust-opacity: 0.1;
+}
+
+[data-ambience="violet-halo"] {
+  --ambiance-opacity: 0.16;
+  --halo-opacity: 0.3;
+  --dust-opacity: 0.1;
 }
 
 .atmosphere__light-leaks {

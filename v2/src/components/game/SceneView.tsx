@@ -6,6 +6,7 @@ import { useGameStore } from '@/store/useGameStore';
 import { getSceneById } from '@/lib/game/getSceneById';
 import SceneText from './SceneText';
 import ChoiceList from './ChoiceList';
+import SceneTransition from './SceneTransition';
 
 export default function SceneView() {
     const router = useRouter();
@@ -26,8 +27,10 @@ export default function SceneView() {
             id="contenu-principal"
             tabIndex={-1}
         >
-            <SceneText scene={scene} />
-            <ChoiceList choices={scene.choices} />
+            <SceneTransition id={scene.id}>
+                <SceneText scene={scene} />
+                <ChoiceList choices={scene.choices} />
+            </SceneTransition>
         </main>
     );
 }
