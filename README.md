@@ -1,114 +1,56 @@
-# 🌑 Echo — Journal d’une conscience dans le noir
+# 🌑 Echo
 
-Echo est une expérience web immersive, minimaliste et contemplative.
+Echo est une **expérience narrative interactive minimaliste** : le joueur est une présence qui s'éveille dans un espace sans repères et progresse par une boucle *scène → choix → conséquence → mémoire*. Le monde garde la trace de son passage et lui ouvre du contenu selon ce qu'il a découvert.
 
-Le projet explore une narration fragmentée dans un espace abstrait, où le visiteur navigue entre textes, artefacts et zones sans repères.
+> Echo ne doit pas être « compris ». Il doit être ressenti, traversé, interprété.
 
----
+## ✨ Expérience
 
-## ✨ Concept
+- **`/`** — l'entrée dans l'obscurité.
+- **`/echo`** — la boucle de jeu : une scène, des choix, une conséquence, une transition.
+- **`/journal`** — les fragments de pensée débloqués.
+- **`/artefacts`** — les objets découverts.
+- **`/carte`** — les zones révélées.
+- **`/trace`** — la conclusion : une synthèse du parcours et l'empreinte laissée.
 
-Echo n’est pas un site classique.
+Chaque choix peut débloquer un fragment, un artefact ou une zone, et poser des drapeaux narratifs. Certaines scènes sont **cachées** : elles n'apparaissent que si la mémoire du joueur remplit une condition (par ex. porter un artefact précis).
 
-C’est un espace.
+## ⚙️ Stack
 
-Un endroit sans frontières, sans règles explicites, où l’utilisateur explore :
+- [Next.js](https://nextjs.org/) (App Router) + React + TypeScript
+- [Zustand](https://github.com/pmndrs/zustand) — état de jeu, persisté en `localStorage`
+- [Framer Motion](https://www.framer.com/motion/) — transitions de scène
+- [Tailwind CSS](https://tailwindcss.com/) v4 + tokens visuels et couches atmosphériques (brume, halos, poussière, light-leaks en canvas)
 
-- des fragments de pensées (Journal)
-- des objets étranges (Artefacts)
-- des zones abstraites (Carte)
-- une interaction personnelle (Trace)
+L'ensemble respecte `prefers-reduced-motion`, la navigation clavier et une structure sémantique accessible.
 
-L’objectif n’est pas de comprendre immédiatement, mais de ressentir, interpréter et projeter.
+## 🚀 Développement
 
----
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # build de production
+npm run lint     # ESLint
+```
 
-## 🧠 Intentions
+## 🗂️ Structure
 
-- Créer une expérience immersive sans gameplay explicite
-- Travailler la narration environnementale
-- Explorer une UI minimale mais émotionnelle
-- Donner une sensation de vide, de silence et de présence
+```txt
+src/
+  app/            # routes (/, /echo, /journal, /artefacts, /carte, /trace)
+  components/     # game, layout, journal, artefacts, carte, ui
+  content/        # scenes, fragments, artefacts, zones (données narratives)
+  domain/game/    # types métier (Scene, Choice, Effect, SceneCondition…)
+  lib/game/       # logique pure (applyEffects, checkCondition, getAvailableChoices…)
+  store/          # useGameStore (Zustand + persistance)
+public/images/    # couches d'ambiance, hero, carte, artefacts
+docs/             # documentation de conception (v1 archivée, v2 = vision actuelle)
+```
 
----
+## 📚 Conception
 
-## 🧱 Structure du site
-
-- `/` → Introduction / entrée dans l’expérience
-- `/journal` → Fragments narratifs
-- `/artefacts` → Objets abstraits
-- `/carte` → Zones explorables
-- `/trace` → Interaction utilisateur (formulaire)
-
----
-
-## 🎨 Direction artistique
-
-- Univers sombre, abstrait, introspectif
-- Utilisation de :
-    - halos lumineux
-    - textures organiques
-    - brume et particules
-- Typographie contrastée (serif + sans-serif)
-- Interface minimaliste et immersive
-
----
-
-## ⚙️ Technologies utilisées
-
-- HTML5 sémantique
-- CSS (architecture modulaire + variables)
-- JavaScript (interactions progressives)
-- IntersectionObserver (animations)
-- Canvas (effets visuels)
-- Accessibilité (aria, focus, skip-link)
-
----
-
-## 🧩 Fonctionnalités principales
-
-- Animations progressives au scroll
-- Micro-interactions (depth, hover, lumière)
-- Formulaire avec validation accessible
-- Effets atmosphériques globaux
-- Expérience responsive mobile-first
-
----
-
-## ♿ Accessibilité
-
-- Navigation clavier
-- Focus visibles
-- Structure sémantique
-- Respect de `prefers-reduced-motion`
-
----
-
-## 🚀 État du projet
-
-Version 1 — Expérience statique immersive
-
-✔ Structure complète  
-✔ Direction artistique cohérente  
-✔ Interactions UI avancées  
-✔ Expérience fluide
-
----
-
-## 🔮 Évolution prévue (Version 2)
-
-Echo va évoluer vers :
-
-- une expérience interactive
-- un système de choix
-- une narration dynamique
-- un mini jeu narratif
-
----
+La vision, le game design, la boucle de jeu, l'architecture, les systèmes, l'arbre de scènes et la roadmap technique sont documentés dans [`docs/v2/`](docs/v2). Les documents de la première version statique sont archivés dans [`docs/v1/`](docs/v1).
 
 ## 👩‍💻 Auteur
 
-Stéphanie — Développeuse Frontend  
-Projet personnel explorant l’intersection entre design, narration et interaction.
-
----
+Stéphanie — Développeuse Frontend. Projet personnel explorant l'intersection entre design, narration et interaction.

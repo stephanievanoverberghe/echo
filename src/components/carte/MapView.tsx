@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useGameStore } from '@/store/useGameStore';
 import { zones } from '@/content/zones';
 import ZoneCard from './ZoneCard';
@@ -14,7 +15,20 @@ export default function MapView() {
             id="contenu-principal"
             tabIndex={-1}
         >
-            <h1 className="text-[length:var(--fs-600)] mb-8">Carte</h1>
+            <h1 className="text-[length:var(--fs-600)] mb-6">Carte</h1>
+
+            <div
+                className="relative mb-8 aspect-[16/9] w-full max-w-2xl overflow-hidden rounded-[var(--radius-lg)] border"
+                style={{ borderColor: 'var(--color-border)' }}
+            >
+                <Image
+                    src="/images/carte/carte.png"
+                    alt="Représentation abstraite du monde d’Echo, sans repères fixes."
+                    fill
+                    sizes="(max-width: 42rem) 100vw, 42rem"
+                    className="object-cover opacity-80"
+                />
+            </div>
 
             {revealed.length === 0 ? (
                 <p className="text-[color:var(--color-text-muted)]">
