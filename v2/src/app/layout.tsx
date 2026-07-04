@@ -40,6 +40,7 @@ export default function RootLayout({
           <Link href="/echo">Echo</Link>
           <Link href="/journal">Journal</Link>
           <Link href="/artefacts">Artefacts</Link>
+          <Link href="/carte">Carte</Link>
         </nav>
         {children}
       </body>
