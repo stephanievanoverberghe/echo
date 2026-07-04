@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { useGameStore } from '@/store/useGameStore';
 import { getSceneById } from '@/lib/game/getSceneById';
@@ -12,6 +12,10 @@ export default function SceneView() {
     const router = useRouter();
     const currentSceneId = useGameStore((state) => state.currentSceneId);
     const scene = getSceneById(currentSceneId);
+
+    // Ref persistant à travers les remontages de SceneText : la première scène
+    // affichée ne prend pas le focus (skip-link préservé), les suivantes oui.
+    const sceneShownRef = useRef(false);
 
     useEffect(() => {
         if (scene?.id === 'trace') {
@@ -28,7 +32,7 @@ export default function SceneView() {
             tabIndex={-1}
         >
             <SceneTransition id={scene.id}>
-                <SceneText scene={scene} />
+                <SceneText scene={scene} autoFocusRef={sceneShownRef} />
                 <ChoiceList choices={scene.choices} />
             </SceneTransition>
         </main>

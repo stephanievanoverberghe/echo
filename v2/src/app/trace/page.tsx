@@ -1,5 +1,6 @@
 'use client';
 
+import { useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { useGameStore } from '@/store/useGameStore';
 import { getSceneById } from '@/lib/game/getSceneById';
@@ -13,6 +14,8 @@ export default function TracePage() {
     const revealedZones = useGameStore((state) => state.revealedZones);
     const flags = useGameStore((state) => state.flags);
     const resetGame = useGameStore((state) => state.resetGame);
+    // true dès le départ : la conclusion prend le focus dès l'arrivée sur /trace.
+    const traceFocusRef = useRef(true);
 
     const scene = getSceneById('trace');
     if (!scene) return null;
@@ -29,7 +32,7 @@ export default function TracePage() {
             tabIndex={-1}
         >
             <SceneTransition id="trace">
-                <SceneText scene={scene} />
+                <SceneText scene={scene} autoFocusRef={traceFocusRef} />
 
                 <div className="mt-8 max-w-xl text-[length:var(--fs-300)] text-[color:var(--color-text-muted)]">
                     <p>
